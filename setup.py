@@ -4,13 +4,9 @@ import os
 import sys
 from setuptools import setup, find_packages
 
-requirements = [
-	'sphinx',
-]
+requirements = ['ec>=0.2.3', 'Sphinx>=1.2.3']
 
-test_requirements = [
-	'docutils>=0.10',  'sphinx'
-]
+test_requirements = []
 
 from eccontrib import sphinxdoc
 
@@ -18,7 +14,7 @@ setup(
 	name='eccontrib-sphinxdoc',
 	version=sphinxdoc.__version__,
 	url='https://github.com/Laufire/ec/sphinxdoc',
-	# download_url='http://pypi.python.org/pypi/eccontrib-sphinxdoc',
+	download_url='http://pypi.python.org/pypi/eccontrib-sphinxdoc',
 	license='MIT',
 	author=sphinxdoc.__author__,
 	author_email=sphinxdoc.__email__,

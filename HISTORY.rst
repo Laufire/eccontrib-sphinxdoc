@@ -23,3 +23,6 @@ Log
 	* 1730	Titles of the Task members, now show the default values too.
 	* 1745	Bug fixed: DocStrings of the Modules weren't processed.
 	
+* 150818
+
+	* 0525	Extracted sphinxdoc as a separate repo from ec.

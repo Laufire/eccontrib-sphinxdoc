@@ -4,15 +4,19 @@ A sphinx extension for documenting ec based scripts.
 
 Installation
 ------------
+At the command line::
 
-.. code:: bash
+    $ pip install eccontrib-sphinxdoc
+    
+    
+Or download the source from `github <https://github.com/Laufire/eccontrib-sphinxdoc>`_, extract it and run::
 
-  $ python setup.py install # with the sphinxdoc dir as the cwd
-  
+    $ python setup.py install
+    
 Usage
 -----
 
-#) Like any other extention, add **sphinxdoc** to the **conf.extensions**. And add the paths of the scripts to **sys.path**.
+#) Like any other sphinx extention, add **sphinxdoc** to the **conf.extensions**. And add the paths of the scripts to **sys.path**.
 	In **conf.py** add:
 	
 	.. code:: python
