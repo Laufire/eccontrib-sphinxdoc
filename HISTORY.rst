@@ -13,16 +13,21 @@ Log
 
 	* 1000	Made an installable package.
 	* 1740	Incorporated changes from ec.
-	
+
 * 150801
 
-	* 1715	DocStrings of the Members are now parsed as simple RST and added to the documentation. It took ~12hrs, chiefly due to the ineperience with the underlying APIs.
-	
+	* 1715	DocStrings of the Members are now parsed as simple RST and added to the documentation. It took ~12hrs, chiefly due to the inexperience with the underlying APIs.
+
 * 150803
 
 	* 1730	Titles of the Task members, now show the default values too.
 	* 1745	Bug fixed: DocStrings of the Modules weren't processed.
-	
+
 * 150818
 
 	* 0525	Extracted sphinxdoc as a separate repo from ec.
+
+* 150913
+
+	* 0950	Made the files to tightly adhere the editorconfig.
+	* 1045	Dusted the files.

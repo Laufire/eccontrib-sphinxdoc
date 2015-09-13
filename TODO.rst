@@ -3,7 +3,8 @@ ToDo
 
 Tasks
 -----
-* Take care of sphinx version collission. There might be multiple verions of sphinx which could cause problems like missing themes.
+
+* Take care of sphinx version collision. There might be multiple versions of sphinx which could cause problems like missing themes.
 
 * Adding sphinx.ext.napoleon.
 
