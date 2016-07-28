@@ -31,3 +31,8 @@ Log
 
 	* 0950	Made the files to tightly adhere the editorconfig.
 	* 1045	Dusted the files.
+
+* 160729
+
+	* 0300	Added requirements to setup.py.
+  

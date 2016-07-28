@@ -125,6 +125,10 @@ class pkg:
   @task(desc='Tests the deployed package (from PyPI).')
   def test(name=None):
 
+    if True: # //! ToDo: Write some tests.
+      print 'ToDo: Write some tests.'
+      return
+
     devLinks.clear() # clear all the dev links to avoid module mixing
     assert(run('pip uninstall -y ec') == 0)
     assert(run('pip install --upgrade ec') == 0)
