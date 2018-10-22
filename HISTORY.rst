@@ -1,6 +1,6 @@
 History
 =======
-v0.0.1 (2015-07-30 2240 +0530)
+v0.0.2 (2019-10-23 0110 +0530)
 ------------------------------
 
 Log
@@ -35,4 +35,7 @@ Log
 * 160729
 
 	* 0300	Added requirements to setup.py.
-  
+
+* 191023
+
+  * 0130  Switched to importing scripts, instead of modules, in order to avoid module name collissions.

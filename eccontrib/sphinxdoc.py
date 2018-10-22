@@ -2,17 +2,28 @@
 # Info
 __author__ = 'Laufire Technologies'
 __email__ = 'laufiretechnologies@gmail.com'
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 # Imports
+import os
+from os.path import basename, abspath
+import random
+import string
+from imp import load_source
 from docutils import nodes
 from docutils.nodes import paragraph
 from docutils.parsers.rst import Directive
 from docutils.core import publish_doctree
-
 from sphinx.addnodes import desc, desc_name, desc_addname, desc_content, desc_signature, desc_parameterlist, desc_parameter, desc_optional, compact_paragraph
+from ec.interface import setBase
+
+# State
+startingCWD = os.getcwd()
 
 # Helpers
+def getRandomChars(size=16, chars=string.ascii_uppercase):
+  return ''.join(random.choice(chars) for _ in range(size))
+
 def getNodeTreeFromStr(string):
   """Gets a node tree from the given string.
 
@@ -121,31 +132,33 @@ def getGroupTree(Group, prefix):
     )
   ]
 
-def getModuleTree(Module, prefix):
+def getModuleTree(Module, prefix, title):
   Elms = [nodes.target('', '', ids=[prefix])]
 
   Section = nodes.section()
-  Section  += nodes.title(text=getMemberTitle(Module.Config))
+  Section  += nodes.title(text=title)
   Section += getMemberContent(Module, *getChildren(Module, prefix))
 
   return Elms + [Section]
 
 # Main
-from ec import interface # importing this automatically makes the imported ec scripts to be configured
+from ec import interface #Note: Importing this makes any imported ec scripts to be configured, automatically.
 
 def setup(app):
   app.add_directive('ec_module', EcModuleDirective)
 
-  return {'version': '0.1'}   # identifies the version of our extension
+  return {'version': __version__}
 
 class EcModuleDirective(Directive):
 
-  has_content = True # this enables content in the directive
+  has_content = True # this alllows for passing content with the directive
 
   def run(self):
     env = self.state.document.settings.env
+    module_path = self.content[0]
+    os.chdir(startingCWD) #Note: Allow for relative imports.
+    module = load_source(getRandomChars(16), module_path) #ToDo: Ensure that the random string is a available-module-name.
+    setBase(module) #Fix: This is a hot-fix for force-configuring the loaded scripts, as ec hooks only into module imports.
+    moduleID = "ec-%d-%s" % (env.new_serialno('ec'), module.__ec_member__.Config['name'])
 
-    module_name = self.content[0]
-    module = __import__(module_name)
-
-    return getModuleTree(module.__ec_member__, "ec-%d-%s" % (env.new_serialno('ec'), module.__ec_member__.Config['name']))
+    return getModuleTree(module.__ec_member__, moduleID, basename(module_path)) #ToDo: Pass optional titles through the directives.
