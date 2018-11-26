@@ -1,10 +1,10 @@
-"""An autodoc inspired sphinx exetnsion, that could document ec based scripts and their members."""
+r"""An autodoc inspired sphinx exetnsion, that could document ec based scripts and their members."""
 
 import os
 import sys
 from setuptools import setup, find_packages
 
-requirements = ['ec>=0.2.3', 'Sphinx>=1.2.3', 'docutils>=0.12']
+requirements = ['ec>=0.2.5', 'Sphinx>=1.2.3', 'docutils>=0.12']
 
 test_requirements = []
 

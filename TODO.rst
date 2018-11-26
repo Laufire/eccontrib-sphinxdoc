@@ -4,6 +4,8 @@ ToDo
 Tasks
 -----
 
+* Prune the tools dir.
+
 * Imporove error reporting.
 
   * Log the commands and filenames with rst markup errors.

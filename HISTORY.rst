@@ -36,6 +36,10 @@ Log
 
 	* 0300	Added requirements to setup.py.
 
-* 191023
+* 181023
 
-  * 0130  Switched to importing scripts, instead of modules, in order to avoid module name collissions.
+	* 0130	Switched to importing scripts, instead of modules, in order to avoid module name collissions.
+
+* 181126
+
+	* 1635	Moved to a higher version of *ec*, due the version conflicts in the existing version.

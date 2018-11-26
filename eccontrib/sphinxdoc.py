@@ -2,7 +2,7 @@
 # Info
 __author__ = 'Laufire Technologies'
 __email__ = 'laufiretechnologies@gmail.com'
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 # Imports
 import os

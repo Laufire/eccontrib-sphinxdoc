@@ -11,7 +11,7 @@ def main():
 
   import pip
 
-  pip_args = ['install', '-r', 'build_requirements.txt']
+  pip_args = ['install', '-r', 'requirements.txt']
 
   proxy = os.environ.get('http_proxy')
   if proxy:
